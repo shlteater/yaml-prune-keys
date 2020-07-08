@@ -5,9 +5,3 @@ tmp
 
 # Dependencies
 node_modules
-
-# github
-.github
-
-# vscode
-.vscode

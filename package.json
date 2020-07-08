@@ -15,8 +15,7 @@
     "index.js"
   ],
   "dependencies": {
-    "js-yaml": "^3.7.0",
-    "lodash": "^4.17.2"
+    "js-yaml": "^3.7.0"
   },
   "devDependencies": {
     "@movable/eslint-config": "^0.5.1",

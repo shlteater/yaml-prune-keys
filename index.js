@@ -2,7 +2,6 @@
 
 const readFileSync = require('fs').readFileSync;
 const jsYaml = require('js-yaml');
-const _ = require('lodash');
 
 function readAsJSON(fileName) {
   const fileBuffer = readFileSync(fileName);
@@ -12,15 +11,15 @@ function readAsJSON(fileName) {
 }
 
 function isObject(obj) {
-  return Object.prototype.toString.call(obj) === '[object Object]'
+  return Object.prototype.toString.call(obj) === '[object Object]';
 }
 
-function prune(first,second){
-  if(isObject(second) && !Array.isArray(second)){
+function prune(first, second) {
+  if (isObject(second) && !Array.isArray(second)) {
     const output = {};
-    for(let key in second){
-      if(key in first){
-        output[key] = prune(first[key],second[key]);
+    for (let key in second) {
+      if (key in first) {
+        output[key] = prune(first[key], second[key]);
       }
     }
     return output;
@@ -35,11 +34,11 @@ function prune(first,second){
  * @param {string} second the second file path
  * @return {string} the output YAML file
  */
-function yamlPrune(first,second) {
+function yamlPrune(first, second) {
   const firstFile = readAsJSON(first);
   const secondFile = readAsJSON(second);
 
-  const outputJSON = prune(firstFile,secondFile);
+  const outputJSON = prune(firstFile, secondFile);
   return jsYaml.dump(outputJSON);
 }
 
