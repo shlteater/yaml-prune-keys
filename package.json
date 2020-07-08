@@ -1,0 +1,34 @@
+{
+  "name": "@shlteater87/yaml-prune",
+  "version": "0.1.0",
+  "description": "A super simple tool for pruning YAML file",
+  "main": "index.js",
+  "bin": "bin/yaml-prune",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "mocha",
+    "release": "standard-version"
+  },
+  "files": [
+    "bin/yaml-prune",
+    "index.js"
+  ],
+  "dependencies": {
+    "js-yaml": "^3.7.0",
+    "lodash": "^4.17.2"
+  },
+  "devDependencies": {
+    "@movable/eslint-config": "^0.5.1",
+    "@movable/eslint-config-node": "^0.4.2",
+    "@movable/prettier-config": "^0.3.1",
+    "chai": "^4.2.0",
+    "common-tags": "^1.4.0",
+    "mocha": "^5.2.0",
+    "standard-version": "^7.1.0"
+  },
+  "volta": {
+    "node": "12.16.1",
+    "yarn": "1.22.4"
+  }
+}
