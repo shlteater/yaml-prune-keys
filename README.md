@@ -9,13 +9,13 @@ A super simple tool for pruning YAML file with keys in another YAML file.
 ### For the command line
 
 ```bash
-npm install -g @shlteater/yaml-prune-keys
+npm install -g yaml-prune-keys
 ```
 
 ### For use through Node
 
 ```bash
-npm install --save @shlteater/yaml-prune-keys
+npm install --save yaml-prune-keys
 ```
 
 ## Usage
@@ -70,7 +70,7 @@ See test/lib-test.js for all the behaviors.
 
 ```javascript
 const resolve = require('path').resolve;
-const pruneKeys = require('@shlteater/yaml-prune-keys');
+const pruneKeys = require('yaml-prune-keys');
 
 const output = pruneKeys(resolve('relative/path/to/the/first/file.yml'), '/Users/the/second/file.yml');
 console.log(output); // Prints out the resulting YAML as a string
