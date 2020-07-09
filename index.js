@@ -15,7 +15,12 @@ function isObject(obj) {
 }
 
 function prune(first, second) {
+  // second is a object, recursive find
   if (isObject(second) && !Array.isArray(second)) {
+    // cannot recursive find in first, just return null
+    if (!(isObject(first) && !Array.isArray(second))) {
+      return null;
+    }
     const output = {};
     for (let key in second) {
       if (key in first) {
@@ -24,6 +29,7 @@ function prune(first, second) {
     }
     return output;
   }
+  // second is not a object, just return first
   return first;
 }
 

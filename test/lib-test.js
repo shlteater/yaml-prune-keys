@@ -39,6 +39,19 @@ describe('prune logic', function () {
     );
   });
 
+  it('deep YAML keys not found', function () {
+    const output = pruneKeys(...fixtureFiles('notfound/a.yml', 'notfound/b.yml'));
+
+    expect(output).to.equal(
+      stripIndent`
+      a:
+        foo: bar
+      b:
+        foo: null
+    ` + '\n'
+    );
+  });
+
   it('prune with YAML arrays', function () {
     const output = pruneKeys(...fixtureFiles('array/a.yml', 'array/b.yml'));
 
@@ -52,6 +65,25 @@ describe('prune logic', function () {
         foo:
           - b1
           - b2
+    ` + '\n'
+    );
+  });
+
+  it('prune with YAML objects', function () {
+    const output = pruneKeys(...fixtureFiles('object/a.yml', 'object/b.yml'));
+
+    expect(output).to.equal(
+      stripIndent`
+      a:
+        foo:
+          a1: a1
+          a2: a2
+      b:
+        foo:
+          b1: b1
+          b2: b2
+      c:
+        foo: null
     ` + '\n'
     );
   });

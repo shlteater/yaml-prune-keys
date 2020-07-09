@@ -62,6 +62,8 @@ yaml-prune test/fixtures/basic/a.yml test/fixtures/basic/b.yml > output.yml
 
 The provided file names will be resolved relative to the current directory. So, you an provide a relative path to the files, or an absolute path -- either method works just fine.
 
+See test/lib-test.js for all the behaviors.
+
 ### As a Node package
 
 `yaml-prune` also provides a `node` package that can be consumed to get the output file programmatically.
