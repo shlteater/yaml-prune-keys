@@ -1,5 +1,5 @@
 {
-  "name": "@shlteater87/yaml-prune-keys",
+  "name": "yaml-prune-keys",
   "version": "0.1.2",
   "description": "A super simple tool for pruning YAML file with keys in another YAML file",
   "main": "index.js",
