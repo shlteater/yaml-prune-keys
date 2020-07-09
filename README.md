@@ -1,21 +1,21 @@
 # `yaml-prune`
 
-![Verify](https://github.com/shlteater/yaml-prune/workflows/Verify/badge.svg)
+![Verify](https://github.com/shlteater/yaml-prune-keys/workflows/Verify/badge.svg)
 
-A super simple tool for pruning YAML file.
+A super simple tool for pruning YAML file with keys in another YAML file.
 
 ## Installation
 
 ### For the command line
 
 ```bash
-npm install -g @shlteater/yaml-prune
+npm install -g @shlteater/yaml-prune-keys
 ```
 
 ### For use through Node
 
 ```bash
-npm install --save @shlteater/yaml-prune
+npm install --save @shlteater/yaml-prune-keys
 ```
 
 ## Usage
@@ -68,8 +68,8 @@ The provided file names will be resolved relative to the current directory. So, 
 
 ```javascript
 const resolve = require('path').resolve;
-const prune = require('@shlteater/yaml-prune');
+const pruneKeys = require('@shlteater/yaml-prune-keys');
 
-const output = prune(resolve('relative/path/to/the/first/file.yml'), '/Users/the/second/file.yml');
+const output = pruneKeys(resolve('relative/path/to/the/first/file.yml'), '/Users/the/second/file.yml');
 console.log(output); // Prints out the resulting YAML as a string
 ```

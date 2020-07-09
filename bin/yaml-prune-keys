@@ -3,11 +3,11 @@
 'use strict';
 
 const resolve = require('path').resolve;
-const yamlPrune = require('../index.js');
+const yamlPruneKeys = require('../index.js');
 
 const files = process.argv
   .slice(2)
   .map((path) => resolve(path));
-const outputFile = yamlPrune(files[0],files[1]);
+const outputFile = yamlPruneKeys(files[0],files[1]);
 
 process.stdout.write(outputFile);

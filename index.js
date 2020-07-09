@@ -34,7 +34,7 @@ function prune(first, second) {
  * @param {string} second the second file path
  * @return {string} the output YAML file
  */
-function yamlPrune(first, second) {
+function yamlPruneKeys(first, second) {
   const firstFile = readAsJSON(first);
   const secondFile = readAsJSON(second);
 
@@ -42,4 +42,4 @@ function yamlPrune(first, second) {
   return jsYaml.dump(outputJSON);
 }
 
-module.exports = yamlPrune;
+module.exports = yamlPruneKeys;
